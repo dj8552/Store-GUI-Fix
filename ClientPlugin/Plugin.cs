@@ -49,7 +49,6 @@ namespace ClientPlugin
                 num = (longAmount * __instance.SelectedOfferItem.PricePerUnit);
             }
             __instance.TotalPriceToBuy = MyBankingSystem.GetFormatedValue(num, false);
-            __instance.IsBuyEnabled = (MyBankingSystem.GetBalance(MySession.Static.LocalCharacterEntityId) >= num && amount != 0f && !float.IsNaN(amount));
             return;
         }
 
@@ -62,7 +61,6 @@ namespace ClientPlugin
                 num = (longAmount * __instance.SelectedOrderItem.PricePerUnit);
             }
             __instance.TotalPriceToSell = MyBankingSystem.GetFormatedValue(num, false);
-            __instance.IsSellEnabled = ((float)__instance.SelectedOrderItem.Amount >= amount && amount != 0f && !float.IsNaN(amount));
             return;
         }
     }
